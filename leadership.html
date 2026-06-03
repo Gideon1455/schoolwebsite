@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leadership – Legacy Land Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .page-hero {
+    background: var(--green);
+    padding: 80px 6% 60px;
+    text-align: center;
+    color: #fff;
+  }
+  .page-hero-eyebrow { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; opacity: 0.65; display: block; margin-bottom: 14px; }
+  .page-hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 4vw, 3.2rem); line-height: 1.15; }
+  .page-hero-title em { font-style: italic; opacity: 0.85; }
+
+  .director-section {
+    padding: 88px 6%;
+    background: var(--white);
+  }
+
+  .director-inner {
+    max-width: 1120px; margin: 0 auto;
+    display: grid; grid-template-columns: 260px 1fr;
+    gap: 72px; align-items: start;
+  }
+
+  .director-avatar {
+    width: 260px; height: 260px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0; position: relative;
+    box-shadow: var(--shadow-float);
+    border: 4px solid var(--tan);
+  }
+
+  .director-avatar img {
+    width: 100%; height: 100%; object-fit: cover; display: block; object-position: center 20%; filter: brightness(1.15);
+  }
+
+  .director-tenure {
+    position: absolute; bottom: 14px; right: -12px;
+    background: var(--gold);
+    color: var(--charcoal);
+    font-size: 0.68rem; font-weight: 900;
+    padding: 6px 14px; border-radius: 4px;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    white-space: nowrap;
+  }
+
+  .director-eyebrow { display: inline-block; font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: var(--green); border-bottom: 2px solid var(--green); padding-bottom: 3px; margin-bottom: 14px; }
+  .director-name { font-family: 'Playfair Display', serif; font-size: 2.6rem; font-weight: 900; color: var(--charcoal); margin-bottom: 4px; }
+  .director-role { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--charcoal-light); margin-bottom: 28px; }
+
+  .director-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem; font-style: italic;
+    line-height: 1.65; color: var(--charcoal-mid);
+    max-width: 560px; margin-bottom: 32px;
+    border-left: 3px solid var(--green);
+    padding-left: 20px;
+  }
+
+  .creds-grid { display: flex; flex-wrap: wrap; gap: 8px; }
+
+  .cred {
+    background: var(--green-pale);
+    border: 1px solid rgba(61,107,74,0.2);
+    color: var(--green);
+    padding: 5px 14px; border-radius: 4px;
+    font-size: 0.75rem; font-weight: 700;
+    letter-spacing: 0.03em;
+  }
+
+  .bio-section {
+    padding: 0 6% 88px;
+    background: var(--white);
+  }
+
+  .bio-inner {
+    max-width: 780px; margin: 0 auto;
+    padding-top: 48px;
+    border-top: 1px solid var(--tan);
+  }
+
+  .bio-body {
+    font-size: 1rem; color: var(--charcoal-mid);
+    line-height: 1.82; font-weight: 600;
+  }
+
+  .bio-body p + p { margin-top: 20px; }
+
+  @media (max-width: 768px) {
+    .director-inner { grid-template-columns: 1fr; }
+    .director-avatar { width: 180px; height: 180px; margin: 0 auto; }
+  }
+</style>
+</head>
+<body class="page-body">
+<script src="nav.js"></script>
+
+<div class="page-hero">
+  <span class="page-hero-eyebrow">Why Legacy Land?</span>
+  <h1 class="page-hero-title">Our <em>Leadership</em></h1>
+</div>
+
+<section class="director-section">
+  <div class="director-inner">
+    <div class="director-avatar reveal">
+      <img src="images/founderpic.png" alt="Josephine Ogunwale, Founder & Director">
+    </div>
+    <div class="reveal reveal-d1">
+      <span class="director-eyebrow">Meet Our Founder</span>
+      <h2 class="director-name">Josephine Ogunwale</h2>
+      <p class="director-role">Founder &amp; Director — "Ms. O"</p>
+      <p class="director-quote">
+        "Every child who walks through our doors carries an extraordinary future. My life's calling is to see it, believe in it, and help them step boldly into it."
+      </p>
+      <div class="creds-grid">
+        <span class="cred">M.Ed. Early Childhood Education</span>
+        <span class="cred">M.Ed. Educational Management</span>
+        <span class="cred">Ed.S. Advanced Educational Studies</span>
+        <span class="cred">Special Education Certified</span>
+        <span class="cred">CPR &amp; First Aid Certified</span>
+        <span class="cred">Georgia DECAL Compliant</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bio-section">
+  <div class="bio-inner reveal">
+    <div class="bio-body">
+      <p>Ms. O founded Legacy Land Academy with a singular vision: to create a learning environment where every child is known by name, celebrated for who they are, and challenged to reach their full God-given potential.</p>
+      <p>With three advanced degrees in education and over three decades of hands-on experience in early childhood development, Ms. O brings a depth of knowledge and a warmth of spirit that sets Legacy Land apart. She is not just an administrator — she is a daily presence in classrooms, a mentor to staff, and a trusted partner to every family we serve.</p>
+      <p>Her commitment to excellence is reflected in the academy's full compliance with Georgia DECAL standards and its alignment with the Bright from the Start initiative — not because it is required, but because our children deserve nothing less.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo"><img src="images/logo.png" alt="Legacy Land Academy"></div>
+    <ul class="footer-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="programs.html">Programs</a></li>
+      <li><a href="leadership.html">Leadership</a></li>
+      <li><a href="request-info.html">Enroll</a></li>
+    </ul>
+    <div class="footer-right">
+      1455 Union Station Court, Lawrenceville GA 30045<br>
+      <a href="tel:4700000000">(470) 000-0000</a> &nbsp;·&nbsp;
+      <a href="mailto:info@legacylandacademy.com">info@legacylandacademy.com</a><br>
+      &copy; 2025 Legacy Land Academy. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+);
+<script src="main.js"></script>
+</body>
+</html>

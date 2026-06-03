@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Programs – Legacy Land Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .page-hero { background: var(--green); padding: 80px 6% 60px; text-align: center; color: #fff; }
+  .page-hero-eyebrow { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; opacity: 0.65; display: block; margin-bottom: 14px; }
+  .page-hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 4vw, 3.2rem); line-height: 1.15; }
+  .page-hero-title em { font-style: italic; opacity: 0.85; }
+
+  .programs-section { padding: 88px 6%; background: var(--cream); }
+
+  .programs-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; }
+
+  .program-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--tan);
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .program-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-card); }
+
+  .program-photo { height: 220px; overflow: hidden; }
+  .program-photo img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s; }
+  .program-card:hover .program-photo img { transform: scale(1.05); }
+
+  .program-photo-placeholder {
+    width: 100%; height: 100%;
+    background: var(--green-pale);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .program-photo-placeholder span {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem; font-weight: 900;
+    color: var(--green); opacity: 0.25;
+  }
+
+  .program-body { padding: 28px 24px 24px; }
+  .program-age { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; display: block; }
+  .program-name { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 700; color: var(--charcoal); margin-bottom: 10px; }
+  .program-desc { font-size: 0.87rem; color: var(--charcoal-mid); line-height: 1.7; font-weight: 600; margin-bottom: 20px; }
+
+  .program-footer { padding: 16px 24px; border-top: 1px solid var(--tan); display: flex; justify-content: space-between; align-items: center; }
+  .program-tag { font-size: 0.72rem; font-weight: 800; color: var(--charcoal-light); text-transform: uppercase; letter-spacing: 0.08em; }
+  .program-cta { font-size: 0.78rem; font-weight: 900; color: var(--green); text-decoration: none; text-transform: uppercase; letter-spacing: 0.08em; transition: letter-spacing 0.2s; }
+  .program-cta:hover { letter-spacing: 0.14em; }
+
+  .schedule-strip {
+    padding: 64px 6%;
+    background: var(--white);
+    text-align: center;
+  }
+  .schedule-strip p { font-size: 1rem; color: var(--charcoal-mid); font-weight: 600; margin-bottom: 24px; max-width: 500px; margin-left: auto; margin-right: auto; }
+
+  @media (max-width: 768px) { .programs-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body class="page-body">
+<script src="nav.js"></script>
+
+<div class="page-hero">
+  <span class="page-hero-eyebrow">Education &amp; Care</span>
+  <h1 class="page-hero-title">Our <em>Programs</em></h1>
+</div>
+
+<section class="programs-section">
+  <div class="section-wrap">
+    <div class="section-header reveal">
+      <span class="eyebrow">Designed for Every Stage</span>
+      <h2 class="section-title">From Infants to Pre-K</h2>
+      <p class="section-sub">Developmentally appropriate programs that grow with your child — from their very first weeks of life through kindergarten readiness.</p>
+    </div>
+    <div class="programs-grid">
+      <div class="program-card reveal reveal-d1">
+        <div class="program-photo">
+          <img src="images/img2.jpg" alt="Infant and Toddler Care">
+        </div>
+        <div class="program-body">
+          <span class="program-age" style="color:#5B9BD5">6 Weeks – 18 Months</span>
+          <h3 class="program-name">Infant &amp; Toddler Care</h3>
+          <p class="program-desc">A nurturing, low-ratio environment focused on attachment, sensory exploration, and the building blocks of trust. Our caregivers treat each infant as the unique individual they are, responding to cues and building the secure bonds that support all future learning.</p>
+        </div>
+        <div class="program-footer">
+          <span class="program-tag">Low Ratios</span>
+          <a href="request-info.html" class="program-cta">Inquire</a>
+        </div>
+      </div>
+      <div class="program-card reveal reveal-d2">
+        <div class="program-photo">
+          <img src="images/img3.jpg" alt="Early Explorers">
+        </div>
+        <div class="program-body">
+          <span class="program-age" style="color:#C0975A">18 Months – 3 Years</span>
+          <h3 class="program-name">Early Explorers</h3>
+          <p class="program-desc">Play-based discovery that ignites curiosity, language development, and social skills in an engaging, joyful setting. Children in this program learn to communicate, collaborate, and develop independence through guided exploration.</p>
+        </div>
+        <div class="program-footer">
+          <span class="program-tag">Play-Based</span>
+          <a href="request-info.html" class="program-cta">Inquire</a>
+        </div>
+      </div>
+      <div class="program-card reveal reveal-d3">
+        <div class="program-photo">
+          <div class="program-photo-placeholder"><span>Pre-K</span></div>
+        </div>
+        <div class="program-body">
+          <span class="program-age" style="color:var(--green)">3 – 5 Years</span>
+          <h3 class="program-name">Pre-K Academy</h3>
+          <p class="program-desc">A kindergarten-readiness program with structured literacy, math, STEM enrichment, and character development at its core. Graduates of our Pre-K Academy enter kindergarten confident, curious, and academically prepared.</p>
+        </div>
+        <div class="program-footer">
+          <span class="program-tag">K-Ready Curriculum</span>
+          <a href="request-info.html" class="program-cta">Inquire</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="schedule-strip reveal">
+  <h3 style="font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--charcoal);margin-bottom:12px;">Ready to find the right program?</h3>
+  <p>Schedule a personal tour with Ms. O and see Legacy Land in action.</p>
+  <a href="request-info.html" class="btn-primary">Request Info</a>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo"><img src="images/logo.png" alt="Legacy Land Academy"></div>
+    <ul class="footer-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="programs.html">Programs</a></li>
+      <li><a href="leadership.html">Leadership</a></li>
+      <li><a href="request-info.html">Enroll</a></li>
+    </ul>
+    <div class="footer-right">
+      1455 Union Station Court, Lawrenceville GA 30045<br>
+      <a href="tel:4700000000">(470) 000-0000</a> &nbsp;·&nbsp;
+      <a href="mailto:info@legacylandacademy.com">info@legacylandacademy.com</a><br>
+      &copy; 2025 Legacy Land Academy. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+);
+<script src="main.js"></script>
+</body>
+</html>

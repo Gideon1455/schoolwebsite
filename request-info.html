@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Request Info – Legacy Land Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .page-hero { background: var(--green); padding: 80px 6% 60px; text-align: center; color: #fff; }
+  .page-hero-eyebrow { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; opacity: 0.65; display: block; margin-bottom: 14px; }
+  .page-hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 4vw, 3.2rem); line-height: 1.15; }
+  .page-hero-title em { font-style: italic; opacity: 0.85; }
+
+  .form-section { padding: 88px 6%; background: var(--cream); }
+
+  .form-wrap {
+    max-width: 680px; margin: 0 auto;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--tan);
+    box-shadow: var(--shadow-card);
+    padding: 56px 52px;
+  }
+
+  .form-group { margin-bottom: 24px; }
+
+  label {
+    display: block;
+    font-size: 0.8rem; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--charcoal-mid);
+    margin-bottom: 8px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 13px 16px;
+    border: 1.5px solid var(--tan);
+    border-radius: 8px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.95rem; font-weight: 600;
+    color: var(--charcoal);
+    background: var(--cream);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+  }
+
+  input:focus, select:focus, textarea:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(61,107,74,0.1);
+    background: var(--white);
+  }
+
+  textarea { resize: vertical; min-height: 120px; }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .form-submit {
+    width: 100%;
+    padding: 15px;
+    background: var(--green);
+    color: #fff;
+    border: none; border-radius: 8px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.95rem; font-weight: 800;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    margin-top: 8px;
+  }
+  .form-submit:hover { background: var(--green-mid); transform: translateY(-2px); }
+
+  .form-note {
+    text-align: center;
+    font-size: 0.78rem; color: var(--charcoal-light);
+    font-weight: 600; margin-top: 16px;
+  }
+
+  @media (max-width: 600px) {
+    .form-wrap { padding: 36px 24px; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body class="page-body">
+<script src="nav.js"></script>
+
+<div class="page-hero">
+  <span class="page-hero-eyebrow">Enrollment</span>
+  <h1 class="page-hero-title">Request <em>Information</em></h1>
+</div>
+
+<section class="form-section">
+  <div class="form-wrap reveal">
+    <div class="section-header" style="margin-bottom:36px;">
+      <span class="eyebrow">Get in Touch</span>
+      <h2 class="section-title" style="font-size:1.8rem;">Schedule a Tour</h2>
+      <p class="section-sub" style="font-size:0.9rem;">Fill out the form below and Ms. O will reach out to schedule your personal visit.</p>
+    </div>
+
+    <form>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" name="firstName" placeholder="Jane" required>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" name="lastName" placeholder="Smith" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="jane@example.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="(470) 000-0000">
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="childAge">Child's Age</label>
+          <select id="childAge" name="childAge">
+            <option value="">Select age range</option>
+            <option>6 Weeks – 18 Months</option>
+            <option>18 Months – 3 Years</option>
+            <option>3 – 5 Years</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="startDate">Desired Start</label>
+          <select id="startDate" name="startDate">
+            <option value="">Select timeframe</option>
+            <option>Immediately</option>
+            <option>Within 1 Month</option>
+            <option>1–3 Months</option>
+            <option>3+ Months</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Questions or Comments</label>
+        <textarea id="message" name="message" placeholder="Tell us anything you'd like us to know..."></textarea>
+      </div>
+
+      <button type="submit" class="form-submit">Send My Request</button>
+      <p class="form-note">We typically respond within one business day.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo"><img src="images/logo.png" alt="Legacy Land Academy"></div>
+    <ul class="footer-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="programs.html">Programs</a></li>
+      <li><a href="leadership.html">Leadership</a></li>
+      <li><a href="request-info.html">Enroll</a></li>
+    </ul>
+    <div class="footer-right">
+      1455 Union Station Court, Lawrenceville GA 30045<br>
+      <a href="tel:4700000000">(470) 000-0000</a> &nbsp;·&nbsp;
+      <a href="mailto:info@legacylandacademy.com">info@legacylandacademy.com</a><br>
+      &copy; 2025 Legacy Land Academy. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+);
+<script src="main.js"></script>
+</body>
+</html>

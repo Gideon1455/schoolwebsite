@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About – Legacy Land Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .page-hero {
+    background: var(--green);
+    padding: 80px 6% 60px;
+    text-align: center;
+    color: #fff;
+  }
+  .page-hero-eyebrow {
+    font-size: 0.72rem; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 0.14em;
+    opacity: 0.65; display: block; margin-bottom: 14px;
+  }
+  .page-hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    line-height: 1.15;
+  }
+  .page-hero-title em { font-style: italic; opacity: 0.85; }
+
+  /* PHILOSOPHY */
+  .philosophy { padding: 88px 6%; background: var(--gold-pale); }
+
+  .philosophy-inner {
+    max-width: 1120px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
+    align-items: start;
+  }
+
+  .beliefs { display: flex; flex-direction: column; gap: 4px; }
+
+  .belief {
+    padding: 24px 0;
+    border-bottom: 1px solid var(--tan);
+    display: grid; grid-template-columns: 40px 1fr; gap: 20px;
+    align-items: start;
+    transition: padding-left 0.2s;
+    cursor: default;
+  }
+  .belief:hover { padding-left: 6px; }
+  .belief:first-child { border-top: 1px solid var(--tan); }
+
+  .belief-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.8rem; font-weight: 700;
+    color: var(--tan-dark); padding-top: 3px;
+  }
+
+  .belief-title { font-size: 0.95rem; font-weight: 800; color: var(--charcoal); margin-bottom: 6px; }
+  .belief-body { font-size: 0.86rem; color: var(--charcoal-mid); line-height: 1.68; font-weight: 600; }
+
+  .verse-card {
+    background: var(--green);
+    border-radius: var(--radius-lg);
+    padding: 48px 40px;
+    color: #fff;
+    position: sticky; top: 100px;
+  }
+  .verse-label { font-size: 0.68rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.14em; opacity: 0.55; margin-bottom: 20px; display: block; }
+  .verse-text { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-style: italic; line-height: 1.6; margin-bottom: 8px; }
+  .verse-ref { font-size: 0.75rem; font-weight: 800; opacity: 0.55; letter-spacing: 0.06em; display: block; margin-bottom: 40px; }
+  .verse-rule { width: 40px; height: 2px; background: rgba(255,255,255,0.3); margin: 28px 0; }
+  .verse-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .vstat strong { display: block; font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 900; line-height: 1; margin-bottom: 6px; }
+  .vstat span { font-size: 0.7rem; font-weight: 700; opacity: 0.6; text-transform: uppercase; letter-spacing: 0.08em; }
+
+  /* COMMITMENT */
+  .commitment { padding: 88px 6%; background: var(--white); }
+
+  .commitment-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+
+  .commit-card {
+    padding: 32px 28px;
+    border: 1px solid var(--tan);
+    border-radius: var(--radius);
+    background: var(--white);
+    transition: background 0.22s, box-shadow 0.22s;
+  }
+  .commit-card:hover { background: var(--green-pale); box-shadow: var(--shadow-soft); }
+
+  .commit-rule { width: 28px; height: 2px; background: var(--green); margin-bottom: 18px; display: block; transition: width 0.3s; }
+  .commit-card:hover .commit-rule { width: 48px; }
+
+  .commit-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--charcoal); margin-bottom: 10px; }
+  .commit-text { font-size: 0.87rem; color: var(--charcoal-mid); line-height: 1.7; font-weight: 600; }
+
+  @media (max-width: 768px) {
+    .philosophy-inner { grid-template-columns: 1fr; }
+    .commitment-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body class="page-body">
+<script src="nav.js"></script>
+
+<div class="page-hero">
+  <span class="page-hero-eyebrow">Why Legacy Land?</span>
+  <h1 class="page-hero-title">About <em>Legacy Land Academy</em></h1>
+</div>
+
+<!-- PHILOSOPHY / BELIEFS -->
+<section class="philosophy">
+  <div class="section-wrap">
+    <div class="section-header reveal">
+      <span class="eyebrow">Our Philosophy</span>
+      <h2 class="section-title">What We Believe About Children</h2>
+    </div>
+    <div class="philosophy-inner">
+      <div class="beliefs">
+        <div class="belief reveal reveal-d1">
+          <span class="belief-num">01</span>
+          <div>
+            <div class="belief-title">Every child is uniquely gifted</div>
+            <p class="belief-body">We discover and nurture each child's God-given strengths rather than fitting them into a single mold.</p>
+          </div>
+        </div>
+        <div class="belief reveal reveal-d2">
+          <span class="belief-num">02</span>
+          <div>
+            <div class="belief-title">Families are essential partners</div>
+            <p class="belief-body">True growth happens in concert between school and home. We keep that bond strong and transparent.</p>
+          </div>
+        </div>
+        <div class="belief reveal reveal-d3">
+          <span class="belief-num">03</span>
+          <div>
+            <div class="belief-title">Faith anchors everything</div>
+            <p class="belief-body">A values-rooted environment builds character, integrity, and resilience that lasts a lifetime.</p>
+          </div>
+        </div>
+        <div class="belief reveal reveal-d4">
+          <span class="belief-num">04</span>
+          <div>
+            <div class="belief-title">Excellence is our standard</div>
+            <p class="belief-body">We hold ourselves to the highest bar — academically, relationally, and operationally — every single day.</p>
+          </div>
+        </div>
+      </div>
+      <div class="verse-card reveal reveal-d2">
+        <span class="verse-label">Scripture</span>
+        <p class="verse-text">"Train up a child in the way he should go, and when he is old he will not depart from it."</p>
+        <span class="verse-ref">Proverbs 22:6</span>
+        <div class="verse-rule"></div>
+        <div class="verse-stats">
+          <div class="vstat"><strong>100%</strong><span>Licensed &amp; Compliant</span></div>
+          <div class="vstat"><strong>30+</strong><span>Years Serving Families</span></div>
+          <div class="vstat"><strong>3×</strong><span>Degree Credentials</span></div>
+          <div class="vstat"><strong>BFTS</strong><span>Bright From the Start</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMITMENT -->
+<section class="commitment">
+  <div class="section-wrap">
+    <div class="section-header reveal">
+      <span class="eyebrow">Our Promise</span>
+      <h2 class="section-title">What We Commit to You</h2>
+      <p class="section-sub">These are not policies — they are promises to every family that trusts us with their child.</p>
+    </div>
+    <div class="commitment-grid">
+      <div class="commit-card reveal reveal-d1">
+        <span class="commit-rule"></span>
+        <div class="commit-title">A Safe Space</div>
+        <p class="commit-text">Secure, clean, and nurturing facilities where your child can explore freely and confidently.</p>
+      </div>
+      <div class="commit-card reveal reveal-d2">
+        <span class="commit-rule"></span>
+        <div class="commit-title">Qualified Staff</div>
+        <p class="commit-text">Credentialed, background-checked, CPR-trained educators who genuinely love what they do.</p>
+      </div>
+      <div class="commit-card reveal reveal-d3">
+        <span class="commit-rule"></span>
+        <div class="commit-title">Open Communication</div>
+        <p class="commit-text">Regular updates, open-door policy, and proactive outreach so you're always in the loop.</p>
+      </div>
+      <div class="commit-card reveal reveal-d4">
+        <span class="commit-rule"></span>
+        <div class="commit-title">Individualized Support</div>
+        <p class="commit-text">We adapt our approach to each child's learning style, pace, and emerging strengths.</p>
+      </div>
+      <div class="commit-card reveal reveal-d5">
+        <span class="commit-rule"></span>
+        <div class="commit-title">Licensed &amp; Compliant</div>
+        <p class="commit-text">Georgia DECAL licensed. Bright from the Start aligned. Fully compliant — zero compromise.</p>
+      </div>
+      <div class="commit-card reveal reveal-d6">
+        <span class="commit-rule"></span>
+        <div class="commit-title">Faith &amp; Integrity</div>
+        <p class="commit-text">We operate with honesty, compassion, and Christian values in every decision we make.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo"><img src="images/logo.png" alt="Legacy Land Academy"></div>
+    <ul class="footer-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="programs.html">Programs</a></li>
+      <li><a href="leadership.html">Leadership</a></li>
+      <li><a href="request-info.html">Enroll</a></li>
+    </ul>
+    <div class="footer-right">
+      1455 Union Station Court, Lawrenceville GA 30045<br>
+      <a href="tel:4700000000">(470) 000-0000</a> &nbsp;·&nbsp;
+      <a href="mailto:info@legacylandacademy.com">info@legacylandacademy.com</a><br>
+      &copy; 2025 Legacy Land Academy. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+);
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Legacy Land Academy – Daycare &amp; Preschool</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* ── HOMEPAGE-SPECIFIC ── */
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 90px 6% 70px;
+    background: var(--cream);
+  }
+
+  /* Brand title strip */
+  .hero-brand {
+    padding: 44px 0 44px;
+    border-bottom: 1px solid var(--tan);
+    margin-bottom: 56px;
+    animation: fadeUp 0.6s ease both;
+    text-align: center;
+  }
+
+  .hero-brand-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3.2rem, 7vw, 6rem);
+    line-height: 1.05; color: #1E2E4A;
+    margin-bottom: 14px;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-brand-title em { font-style: italic; color: #C9963A; }
+
+  .hero-brand-sub {
+    font-size: 0.82rem; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 0.22em;
+    color: var(--gold);
+  }
+
+  /* Two-column row */
+  .hero-body-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    flex: 1;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    line-height: 1.1; color: var(--charcoal);
+    margin-bottom: 20px;
+    animation: fadeUp 0.7s ease 0.1s both;
+  }
+
+  .hero-title em { font-style: italic; color: var(--gold); }
+
+  .hero-body {
+    font-size: 1.05rem; color: var(--charcoal-mid);
+    line-height: 1.75; font-weight: 600;
+    max-width: 440px; margin-bottom: 34px;
+    animation: fadeUp 0.7s ease 0.2s both;
+  }
+
+  .hero-actions {
+    display: flex; gap: 14px; flex-wrap: wrap;
+    animation: fadeUp 0.7s ease 0.3s both;
+  }
+
+  .hero-divider {
+    width: 48px; height: 2px;
+    background: var(--tan); margin: 32px 0;
+    animation: fadeUp 0.7s ease 0.35s both;
+  }
+
+  .hero-stats {
+    display: flex; gap: 36px; flex-wrap: wrap;
+    animation: fadeUp 0.7s ease 0.4s both;
+  }
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.9rem; font-weight: 900;
+    color: var(--green); display: block; line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.72rem; color: var(--charcoal-light);
+    font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.08em; margin-top: 4px; display: block;
+  }
+
+  /* Carousel in hero */
+  .hero-carousel {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-float);
+    animation: fadeUp 0.8s ease 0.15s both;
+  }
+
+  .hero-carousel .carousel-track-wrap { overflow: hidden; }
+
+  .hero-carousel .carousel-track {
+    display: flex;
+    transition: transform 0.55s cubic-bezier(0.45,0,0.15,1);
+  }
+
+  .hero-carousel .carousel-slide {
+    min-width: 100%; height: 380px;
+    position: relative; flex-shrink: 0;
+  }
+
+  .hero-carousel .carousel-slide img {
+    width: 100%; height: 100%; object-fit: cover;
+    display: block; filter: brightness(0.78);
+  }
+
+  .hero-carousel .carousel-caption {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 50px 28px 24px;
+    background: linear-gradient(to top, rgba(46,42,37,0.82) 0%, transparent 100%);
+    color: #fff;
+  }
+
+  .hero-carousel .carousel-caption h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem; margin-bottom: 4px;
+  }
+
+  .hero-carousel .carousel-caption p {
+    font-size: 0.8rem; opacity: 0.72; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.07em;
+  }
+
+  .hero-carousel .carousel-controls {
+    display: flex; justify-content: center; align-items: center;
+    gap: 12px; padding: 14px;
+    background: var(--charcoal);
+  }
+
+  .carousel-btn {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff; width: 36px; height: 36px;
+    border-radius: 50%; cursor: pointer; font-size: 0.95rem;
+    transition: background 0.2s;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .carousel-btn:hover { background: var(--green); border-color: var(--green); }
+
+  .carousel-dots { display: flex; gap: 8px; }
+
+  .carousel-dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: rgba(255,255,255,0.25); cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    border: none;
+  }
+  .carousel-dot.active { background: var(--green-light); transform: scale(1.3); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: none; }
+  }
+
+  @media (max-width: 900px) {
+    .hero-body-row { grid-template-columns: 1fr; gap: 40px; }
+    .hero-carousel .carousel-slide { height: 280px; }
+  }
+
+  /* CAROUSEL */
+  .carousel-section { background: var(--charcoal); padding: 0; overflow: hidden; }
+
+  .carousel-track-wrap { overflow: hidden; position: relative; }
+
+  .carousel-track {
+    display: flex;
+    transition: transform 0.55s cubic-bezier(0.45,0,0.15,1);
+  }
+
+  .carousel-slide {
+    min-width: 100%; height: 480px;
+    position: relative; flex-shrink: 0;
+  }
+
+  .carousel-slide img {
+    width: 100%; height: 100%; object-fit: cover;
+    display: block; filter: brightness(0.75);
+  }
+
+  .carousel-caption {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 60px 8% 40px;
+    background: linear-gradient(to top, rgba(46,42,37,0.82) 0%, transparent 100%);
+    color: #fff;
+  }
+
+  .carousel-caption h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem; margin-bottom: 6px;
+  }
+
+  .carousel-caption p {
+    font-size: 0.88rem; opacity: 0.75; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.08em;
+  }
+
+  .carousel-controls {
+    display: flex; justify-content: center; align-items: center;
+    gap: 12px; padding: 20px;
+    background: var(--charcoal);
+  }
+
+  .carousel-btn {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff; width: 40px; height: 40px;
+    border-radius: 50%; cursor: pointer; font-size: 1rem;
+    transition: background 0.2s;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .carousel-btn:hover { background: var(--green); border-color: var(--green); }
+
+  .carousel-dots { display: flex; gap: 8px; }
+
+  .carousel-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: rgba(255,255,255,0.25); cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    border: none;
+  }
+  .carousel-dot.active { background: var(--green-light); transform: scale(1.3); }
+
+  /* SLOGAN */
+  .slogan-section {
+    padding: 88px 6%;
+    background: var(--white);
+    text-align: center;
+  }
+
+  .slogan-main {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.7rem, 3.2vw, 2.5rem);
+    color: var(--charcoal); line-height: 1.35;
+    max-width: 780px; margin: 0 auto 24px;
+  }
+
+  .slogan-main em { color: var(--green); font-style: italic; }
+
+  .slogan-body {
+    font-size: 1rem; color: var(--charcoal-mid);
+    max-width: 620px; margin: 0 auto 40px;
+    line-height: 1.78; font-weight: 600;
+  }
+
+  .slogan-pillars {
+    display: grid; grid-template-columns: repeat(3,1fr);
+    gap: 2px; border: 2px solid var(--tan);
+    border-radius: var(--radius); overflow: hidden;
+    max-width: 900px; margin: 48px auto 0;
+  }
+
+  .slogan-pillar {
+    padding: 32px 26px;
+    background: var(--white);
+    border-right: 2px solid var(--tan);
+    transition: background 0.22s;
+  }
+  .slogan-pillar:last-child { border-right: none; }
+  .slogan-pillar:hover { background: var(--green-pale); }
+
+  .pillar-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.78rem; font-weight: 700;
+    color: var(--tan-dark); letter-spacing: 0.06em;
+    margin-bottom: 14px; display: block;
+  }
+
+  .pillar-rule {
+    width: 28px; height: 2px;
+    background: var(--green); margin-bottom: 14px; display: block;
+    transition: width 0.3s;
+  }
+  .slogan-pillar:hover .pillar-rule { width: 48px; }
+
+  .pillar-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem; color: var(--charcoal);
+    margin-bottom: 10px;
+  }
+
+  .pillar-text {
+    font-size: 0.86rem; color: var(--charcoal-mid);
+    line-height: 1.7; font-weight: 600;
+  }
+
+  /* TESTIMONIALS */
+  .testimonials-section {
+    padding: 88px 6%;
+    background: var(--cream);
+  }
+
+  .testimonials-grid {
+    display: grid; grid-template-columns: repeat(3,1fr); gap: 28px;
+    margin-top: 0;
+  }
+
+  .testimonial-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    border: 1px solid var(--tan);
+    box-shadow: var(--shadow-soft);
+    padding: 32px 28px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex; flex-direction: column; gap: 20px;
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card);
+  }
+
+  .testimonial-stars { color: var(--gold); font-size: 1rem; letter-spacing: 2px; }
+
+  .testimonial-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem; font-style: italic;
+    color: var(--charcoal); line-height: 1.65;
+  }
+
+  .testimonial-author {
+    display: flex; align-items: center; gap: 14px;
+    margin-top: auto;
+  }
+
+  .author-avatar {
+    width: 42px; height: 42px; border-radius: 50%;
+    background: var(--green-pale);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem; color: var(--green); font-weight: 900;
+    flex-shrink: 0;
+  }
+
+  .author-name { font-weight: 800; font-size: 0.88rem; color: var(--charcoal); display: block; }
+  .author-role { font-size: 0.75rem; color: var(--charcoal-light); font-weight: 600; }
+
+  /* ENROLL CTA */
+  .enroll-cta {
+    background: var(--green);
+    padding: 88px 6%;
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+
+  .enroll-cta::before {
+    content: '';
+    position: absolute; right: 0; top: 0; bottom: 0;
+    width: 40%;
+    background: rgba(255,255,255,0.04);
+    clip-path: polygon(8% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+
+  .enroll-inner { position: relative; z-index: 2; }
+
+  .enroll-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    color: #fff; margin-bottom: 16px; line-height: 1.2;
+  }
+
+  .enroll-title em { font-style: italic; opacity: 0.85; }
+
+  .enroll-sub {
+    color: rgba(255,255,255,0.78);
+    font-size: 1rem; font-weight: 600;
+    max-width: 520px; margin: 0 auto 36px; line-height: 1.7;
+  }
+
+  .enroll-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+  .btn-enroll {
+    background: #fff; color: var(--green);
+    padding: 14px 32px; border-radius: 6px;
+    font-weight: 800; font-size: 0.9rem;
+    text-decoration: none; letter-spacing: 0.04em;
+    transition: background 0.2s, transform 0.2s;
+    display: inline-block;
+  }
+  .btn-enroll:hover { background: var(--cream); transform: translateY(-2px); }
+
+  .btn-call {
+    background: transparent; color: #fff;
+    padding: 14px 28px; border-radius: 6px;
+    font-weight: 800; font-size: 0.9rem;
+    text-decoration: none; letter-spacing: 0.04em;
+    border: 2px solid rgba(255,255,255,0.45);
+    transition: border-color 0.2s, transform 0.2s;
+    display: inline-block;
+  }
+  .btn-call:hover { border-color: #fff; transform: translateY(-2px); }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .slogan-pillars { grid-template-columns: 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .carousel-slide { height: 320px; }
+  }
+</style>
+</head>
+<body class="page-body">
+<script src="nav.js"></script>
+
+<!-- HERO -->
+<section class="hero">
+
+  <!-- Academy title under navbar -->
+  <div class="hero-brand">
+    <h1 class="hero-brand-title">Legacy Land <em>Academy</em></h1>
+    <span class="hero-brand-sub">Faith · Excellence · Family</span>
+  </div>
+
+  <!-- Two-column body -->
+  <div class="hero-body-row">
+    <div class="hero-content">
+      <h2 class="hero-title">Where Little Minds<br>Grow &amp; <em>Thrive</em></h2>
+      <p class="hero-body">
+        A faith-centered, academically rigorous environment where every child is seen, celebrated, and prepared for a lifetime of learning.
+      </p>
+      <div class="hero-actions">
+        <a href="request-info.html" class="btn-primary">Schedule a Tour</a>
+        <a href="programs.html" class="btn-outline">View Programs</a>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-num">30+</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">DECAL Compliant</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">Faith</span>
+          <span class="stat-label">Centered Values</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carousel on the right -->
+    <div class="hero-carousel">
+      <div class="carousel-track-wrap">
+        <div class="carousel-track" id="carouselTrack">
+          <div class="carousel-slide">
+            <img src="images/img2.jpg" alt="Children learning">
+            <div class="carousel-caption">
+              <h3>Learning Through Play</h3>
+              <p>Early Explorers Program · Ages 18 Months – 3 Years</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="images/img3.jpg" alt="Preschool classroom">
+            <div class="carousel-caption">
+              <h3>Kindergarten-Ready Curriculum</h3>
+              <p>Pre-K Academy · Ages 3 – 5 Years</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="images/img2.jpg" alt="Legacy Land Academy">
+            <div class="carousel-caption">
+              <h3>A Legacy of Excellence</h3>
+              <p>Serving Gwinnett County Families Since 1995</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-controls">
+        <button class="carousel-btn" id="prevBtn">&#8592;</button>
+        <div class="carousel-dots" id="carouselDots"></div>
+        <button class="carousel-btn" id="nextBtn">&#8594;</button>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- SLOGAN + PILLARS -->
+<section class="slogan-section">
+  <div class="section-wrap">
+    <div class="section-header reveal">
+      <span class="eyebrow">Our Promise</span>
+      <h2 class="slogan-main">A place where <em>every child is known,</em><br>loved, and challenged to grow.</h2>
+      <p class="slogan-body">
+        At Legacy Land Academy, we partner with families to nurture the whole child — intellectually, emotionally, and spiritually — from infancy through Pre-K.
+      </p>
+      <a href="about.html" class="btn-outline">Learn About Us</a>
+    </div>
+    <div class="slogan-pillars">
+      <div class="slogan-pillar reveal reveal-d1">
+        <span class="pillar-num">01</span>
+        <span class="pillar-rule"></span>
+        <div class="pillar-name">Faith-Centered</div>
+        <p class="pillar-text">A values-rooted environment that builds character, integrity, and resilience grounded in Christian principles.</p>
+      </div>
+      <div class="slogan-pillar reveal reveal-d2">
+        <span class="pillar-num">02</span>
+        <span class="pillar-rule"></span>
+        <div class="pillar-name">Academically Rigorous</div>
+        <p class="pillar-text">Developmentally appropriate programs designed to prepare every child for kindergarten and beyond.</p>
+      </div>
+      <div class="slogan-pillar reveal reveal-d3">
+        <span class="pillar-num">03</span>
+        <span class="pillar-rule"></span>
+        <div class="pillar-name">Family Partnership</div>
+        <p class="pillar-text">True growth happens in concert between school and home. We keep that bond strong and transparent.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
+  <div class="section-wrap">
+    <div class="section-header reveal">
+      <span class="eyebrow">Families Love Us</span>
+      <h2 class="section-title">What Parents Are Saying</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal reveal-d1">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-quote">"Legacy Land has been a true blessing for our family. Ms. O knows every child by name and it shows in everything they do."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">TW</div>
+          <div>
+            <span class="author-name">Tanya W.</span>
+            <span class="author-role">Parent of a Pre-K student</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-d2">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-quote">"My son came home counting and reading after just a few months. The curriculum is incredible — and the love is real."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">MJ</div>
+          <div>
+            <span class="author-name">Marcus J.</span>
+            <span class="author-role">Parent of an Early Explorer</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-d3">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-quote">"I was nervous about leaving my infant, but the ratio and the warmth of the staff made me feel completely at ease from day one."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">SR</div>
+          <div>
+            <span class="author-name">Simone R.</span>
+            <span class="author-role">Parent of an Infant &amp; Toddler student</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENROLL CTA -->
+<section class="enroll-cta">
+  <div class="enroll-inner">
+    <h2 class="enroll-title">Ready to Give Your Child <em>the Best Start?</em></h2>
+    <p class="enroll-sub">Spaces are limited. Schedule a personal tour with Ms. O and experience the Legacy Land difference firsthand.</p>
+    <div class="enroll-actions">
+      <a href="request-info.html" class="btn-enroll">Request Enrollment Info</a>
+      <a href="tel:4700000000" class="btn-call">(470) 000-0000</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="images/logo.png" alt="Legacy Land Academy">
+    </div>
+    <ul class="footer-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="programs.html">Programs</a></li>
+      <li><a href="leadership.html">Leadership</a></li>
+      <li><a href="request-info.html">Enroll</a></li>
+    </ul>
+    <div class="footer-right">
+      1455 Union Station Court, Lawrenceville GA 30045<br>
+      <a href="tel:4700000000">(470) 000-0000</a> &nbsp;·&nbsp;
+      <a href="mailto:info@legacylandacademy.com">info@legacylandacademy.com</a><br>
+      Georgia DECAL Licensed &nbsp;·&nbsp; Bright from the Start<br>
+      &copy; 2025 Legacy Land Academy. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver(
+  entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+  { threshold: 0.1 }
+);
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Carousel
+const track = document.getElementById('carouselTrack');
+const slides = track.querySelectorAll('.carousel-slide');
+const dotsContainer = document.getElementById('carouselDots');
+let current = 0;
+
+slides.forEach((_, i) => {
+  const dot = document.createElement('button');
+  dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+  dot.addEventListener('click', () => goTo(i));
+  dotsContainer.appendChild(dot);
+});
+
+function goTo(n) {
+  current = (n + slides.length) % slides.length;
+  track.style.transform = `translateX(-${current * 100}%)`;
+  document.querySelectorAll('.carousel-dot').forEach((d, i) =>
+    d.classList.toggle('active', i === current)
+  );
+}
+
+document.getElementById('prevBtn').addEventListener('click', () => goTo(current - 1));
+document.getElementById('nextBtn').addEventListener('click', () => goTo(current + 1));
+
+// Auto-advance
+setInterval(() => goTo(current + 1), 5000);
+</script>
+</body>
+</html>
