@@ -11,6 +11,32 @@
   .page-hero-eyebrow { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; opacity: 0.65; display: block; margin-bottom: 14px; }
   .page-hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 4vw, 3.2rem); line-height: 1.15; }
   .page-hero-title em { font-style: italic; opacity: 0.85; }
+
+  .curriculum-section { padding: 88px 6%; background: var(--cream); }
+
+  .services-grid {
+    display: grid; grid-template-columns: repeat(2,1fr); gap: 24px;
+    margin-top: 48px;
+  }
+
+  .service-card {
+    padding: 32px 28px;
+    border: 1px solid var(--tan);
+    border-radius: var(--radius);
+    background: var(--white);
+    transition: background 0.22s, box-shadow 0.22s;
+  }
+  .service-card:hover { background: var(--green-pale); box-shadow: var(--shadow-soft); }
+
+  .service-rule { width: 28px; height: 2px; background: var(--green); margin-bottom: 18px; display: block; transition: width 0.3s; }
+  .service-card:hover .service-rule { width: 48px; }
+
+  .service-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--charcoal); margin-bottom: 10px; }
+  .service-text { font-size: 0.87rem; color: var(--charcoal-mid); line-height: 1.7; font-weight: 600; }
+
+  @media (max-width: 768px) {
+    .services-grid { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body class="page-body">
@@ -21,10 +47,47 @@
   <h1 class="page-hero-title">Our <em>Curriculum</em></h1>
 </div>
 
-<div class="blank-page">
-  <h2 class="blank-page-title">Curriculum</h2>
-  <p class="blank-page-sub">Content coming soon. Check back for details on our approach to early childhood education.</p>
-</div>
+<section class="curriculum-section">
+  <div class="section-wrap">
+    <div class="section-header reveal">
+      <span class="eyebrow">Our Curriculum</span>
+      <h2 class="section-title">GELDS-Aligned, Hands-On Learning</h2>
+      <p class="section-sub">Our program follows the Georgia Early Learning and Development Standards (GELDS) and incorporates the Creative Curriculum to provide engaging, hands-on learning experiences that promote school readiness and lifelong success.</p>
+    </div>
+
+    <div class="section-header reveal" style="margin-top:64px;">
+      <span class="eyebrow">Our Services</span>
+      <h2 class="section-title">What Sets Us Apart</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal reveal-d1">
+        <span class="service-rule"></span>
+        <div class="service-title">Christ-Centered Learning Experience</div>
+        <p class="service-text">We thoughtfully weave Christian values into every aspect of our daily program, cultivating a strong foundation of faith and character.</p>
+      </div>
+      <div class="service-card reveal reveal-d2">
+        <span class="service-rule"></span>
+        <div class="service-title">Family Partnership &amp; Engagement</div>
+        <p class="service-text">We believe in strong family partnerships through open communication, special events, and enrichment opportunities that actively involve parents in their child's learning journey.</p>
+      </div>
+      <div class="service-card reveal reveal-d3">
+        <span class="service-rule"></span>
+        <div class="service-title">Nutritious Meals &amp; Snacks</div>
+        <p class="service-text">We provide nutritious meals and snacks that support healthy growth and lifelong wellness.</p>
+      </div>
+      <div class="service-card reveal reveal-d4">
+        <span class="service-rule"></span>
+        <div class="service-title">Outdoor Play Areas</div>
+        <p class="service-text">Our safe outdoor spaces encourage children to explore, play, and grow through active, nature-based learning.</p>
+      </div>
+      <div class="service-card reveal reveal-d5">
+        <span class="service-rule"></span>
+        <div class="service-title">CPR and First Aid Certified Staff</div>
+        <p class="service-text">Our staff are fully trained in CPR and First Aid, ensuring a safe, attentive, and responsive environment for every child in our care.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <footer>
   <div class="footer-inner">
@@ -36,9 +99,9 @@
       <li><a href="request-info.html">Enroll</a></li>
     </ul>
     <div class="footer-right">
-      1455 Union Station Court, Lawrenceville GA 30045<br>
-      <a href="tel:4700000000">(470) 000-0000</a> &nbsp;·&nbsp;
-      <a href="mailto:info@legacylandacademy.com">info@legacylandacademy.com</a><br>
+      Lawrenceville, Georgia<br>
+      <a href="tel:4043841575">(404) 384-1575</a> &nbsp;·&nbsp;
+      <a href="mailto:legacylandacademy@gmail.com">legacylandacademy@gmail.com</a><br>
       &copy; 2025 Legacy Land Academy. All rights reserved.
     </div>
   </div>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery – Legacy Land Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .page-hero { background: var(--green); padding: 80px 6% 60px; text-align: center; color: #fff; }
+  .page-hero-eyebrow { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; opacity: 0.65; display: block; margin-bottom: 14px; }
+  .page-hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 4vw, 3.2rem); line-height: 1.15; }
+  .page-hero-title em { font-style: italic; opacity: 0.85; }
+
+  .gallery-section { padding: 88px 6%; background: var(--cream); }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  .gallery-item {
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--tan);
+    box-shadow: var(--shadow-soft);
+    cursor: pointer;
+    aspect-ratio: 1 / 1;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .gallery-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); }
+
+  .gallery-item img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+    transition: transform 0.4s;
+  }
+  .gallery-item:hover img { transform: scale(1.06); }
+
+  /* Lightbox */
+  .lightbox {
+    position: fixed; inset: 0; z-index: 2000;
+    background: rgba(30,46,74,0.92);
+    display: none;
+    align-items: center; justify-content: center;
+    padding: 40px;
+  }
+  .lightbox.active { display: flex; }
+
+  .lightbox img {
+    max-width: 90vw; max-height: 88vh;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-float);
+  }
+
+  .lightbox-close {
+    position: absolute; top: 24px; right: 32px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.25);
+    color: #fff; width: 44px; height: 44px;
+    border-radius: 50%; cursor: pointer; font-size: 1.3rem;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s;
+  }
+  .lightbox-close:hover { background: rgba(255,255,255,0.2); }
+
+  @media (max-width: 900px) {
+    .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  }
+</style>
+</head>
+<body class="page-body">
+<script src="nav.js"></script>
+
+<div class="page-hero">
+  <span class="page-hero-eyebrow">Education &amp; Care</span>
+  <h1 class="page-hero-title">Our <em>Gallery</em></h1>
+</div>
+
+<section class="gallery-section">
+  <div class="section-wrap">
+    <div class="section-header reveal">
+      <span class="eyebrow">Life at Legacy Land</span>
+      <h2 class="section-title">Moments From Our Classrooms</h2>
+      <p class="section-sub">A glimpse into the everyday joy, learning, and growth happening at Legacy Land Academy.</p>
+    </div>
+    <div class="gallery-grid" id="galleryGrid">
+      <div class="gallery-item reveal reveal-d1"><img src="images/gallery/IMG_4086.jpeg" alt="Legacy Land Academy"></div>
+      <div class="gallery-item reveal reveal-d2"><img src="images/gallery/IMG_4138.jpeg" alt="Legacy Land Academy"></div>
+      <div class="gallery-item reveal reveal-d3"><img src="images/gallery/IMG_4138 (1).jpeg" alt="Legacy Land Academy"></div>
+      <div class="gallery-item reveal reveal-d4"><img src="images/gallery/IMG_4168.jpeg" alt="Legacy Land Academy"></div>
+      <div class="gallery-item reveal reveal-d5"><img src="images/gallery/IMG_4178.jpeg" alt="Legacy Land Academy"></div>
+      <div class="gallery-item reveal reveal-d6"><img src="images/gallery/PHOTO-2026-06-04-16-18-26.jpeg" alt="Legacy Land Academy"></div>
+      <div class="gallery-item reveal reveal-d1"><img src="images/gallery/PHOTO-2026-06-04-16-18-34.jpeg" alt="Legacy Land Academy"></div>
+      <div class="gallery-item reveal reveal-d2"><img src="images/gallery/PHOTO-2026-06-04-16-18-34 (1).jpeg" alt="Legacy Land Academy"></div>
+      <div class="gallery-item reveal reveal-d3"><img src="images/gallery/PHOTO-2026-06-04-16-18-34 (2).jpeg" alt="Legacy Land Academy"></div>
+      <div class="gallery-item reveal reveal-d4"><img src="images/gallery/PHOTO-2026-06-04-16-18-35.jpeg" alt="Legacy Land Academy"></div>
+      <div class="gallery-item reveal reveal-d5"><img src="images/gallery/PHOTO-2026-06-04-16-18-35 (1).jpeg" alt="Legacy Land Academy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img id="lightboxImg" src="" alt="Expanded photo">
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo"><img src="images/logo.png" alt="Legacy Land Academy"></div>
+    <ul class="footer-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="programs.html">Programs</a></li>
+      <li><a href="leadership.html">Leadership</a></li>
+      <li><a href="request-info.html">Enroll</a></li>
+    </ul>
+    <div class="footer-right">
+      Lawrenceville, Georgia<br>
+      <a href="tel:4043841575">(404) 384-1575</a> &nbsp;·&nbsp;
+      <a href="mailto:legacylandacademy@gmail.com">legacylandacademy@gmail.com</a><br>
+      &copy; 2025 Legacy Land Academy. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script>
+  (function () {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const closeBtn = document.getElementById('lightboxClose');
+
+    document.querySelectorAll('.gallery-item img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.add('active');
+      });
+    });
+
+    function close() {
+      lightbox.classList.remove('active');
+      lightboxImg.src = '';
+    }
+
+    closeBtn.addEventListener('click', close);
+    lightbox.addEventListener('click', e => {
+      if (e.target === lightbox) close();
+    });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') close();
+    });
+  })();
+</script>
+</body>
+</html>

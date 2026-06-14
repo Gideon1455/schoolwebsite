@@ -8,6 +8,7 @@
       children: [
         { label: 'About', href: 'about.html' },
         { label: 'Leadership', href: 'leadership.html' },
+        { label: 'FAQ', href: 'faq.html' },
       ]
     },
     {
@@ -15,6 +16,7 @@
       children: [
         { label: 'Programs', href: 'programs.html' },
         { label: 'Curriculum', href: 'curriculum.html' },
+        { label: 'Gallery', href: 'gallery.html' },
         { label: 'Policies', href: 'policies.html' },
       ]
     },
@@ -40,6 +42,12 @@
   logo.className = 'nav-logo';
   logo.innerHTML = '<img src="images/logo.png" alt="Legacy Land Academy">';
   nav.appendChild(logo);
+
+  const toggle = document.createElement('button');
+  toggle.className = 'nav-toggle';
+  toggle.setAttribute('aria-label', 'Toggle navigation menu');
+  toggle.innerHTML = '<span></span><span></span><span></span>';
+  nav.appendChild(toggle);
 
   const ul = document.createElement('ul');
   ul.className = 'nav-links';
@@ -145,5 +153,30 @@
   // Close on Escape key
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeAll();
+  });
+
+  // ── Mobile menu toggle ──
+  toggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('nav-open');
+    toggle.classList.toggle('active', isOpen);
+    document.body.classList.toggle('nav-lock', isOpen);
+    if (!isOpen) closeAll();
+  });
+
+  // Close mobile menu when a direct link is clicked
+  ul.querySelectorAll('li > a.nav-parent[href]:not([href="#"])').forEach(a => {
+    a.addEventListener('click', () => {
+      nav.classList.remove('nav-open');
+      toggle.classList.remove('active');
+      document.body.classList.remove('nav-lock');
+    });
+  });
+
+  ul.querySelectorAll('.dropdown a').forEach(a => {
+    a.addEventListener('click', () => {
+      nav.classList.remove('nav-open');
+      toggle.classList.remove('active');
+      document.body.classList.remove('nav-lock');
+    });
   });
 })();

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ – Legacy Land Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .page-hero { background: var(--green); padding: 80px 6% 60px; text-align: center; color: #fff; }
+  .page-hero-eyebrow { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; opacity: 0.65; display: block; margin-bottom: 14px; }
+  .page-hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 4vw, 3.2rem); line-height: 1.15; }
+  .page-hero-title em { font-style: italic; opacity: 0.85; }
+
+  .faq-section { padding: 88px 6%; background: var(--cream); }
+
+  .faq-list {
+    max-width: 780px; margin: 48px auto 0;
+    display: flex; flex-direction: column; gap: 14px;
+  }
+
+  .faq-item {
+    background: var(--white);
+    border: 1px solid var(--tan);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+  .faq-item.open { box-shadow: var(--shadow-card); }
+
+  .faq-question {
+    width: 100%;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px;
+    padding: 22px 28px;
+    background: none; border: none;
+    text-align: left; cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1rem; font-weight: 800;
+    color: var(--charcoal);
+  }
+
+  .faq-icon {
+    flex-shrink: 0;
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--green-pale);
+    color: var(--green);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem; font-weight: 900;
+    transition: transform 0.3s, background 0.2s, color 0.2s;
+  }
+  .faq-item.open .faq-icon {
+    transform: rotate(45deg);
+    background: var(--green);
+    color: #fff;
+  }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+
+  .faq-answer-inner {
+    padding: 0 28px 24px;
+    font-size: 0.92rem; color: var(--charcoal-mid);
+    line-height: 1.75; font-weight: 600;
+  }
+
+  @media (max-width: 600px) {
+    .faq-question { padding: 18px 20px; font-size: 0.92rem; }
+    .faq-answer-inner { padding: 0 20px 20px; }
+  }
+</style>
+</head>
+<body class="page-body">
+<script src="nav.js"></script>
+
+<div class="page-hero">
+  <span class="page-hero-eyebrow">Why Legacy Land?</span>
+  <h1 class="page-hero-title">Frequently Asked <em>Questions</em></h1>
+</div>
+
+<section class="faq-section">
+  <div class="section-wrap">
+    <div class="section-header reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="section-title">Answers to Common Questions</h2>
+      <p class="section-sub">Everything you need to know about enrollment, tuition, and policies at Legacy Land Academy.</p>
+    </div>
+
+    <div class="faq-list" id="faqList">
+      <div class="faq-item reveal">
+        <button class="faq-question">
+          <span>How much is your application fee?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Our application fee is a one-time fee of $50 and must be paid at the time of application submission. This is required to hold your child's slot and guarantee that your child's slot is available.</div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question">
+          <span>What are your hours of operation?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">We operate from 6:30 AM – 6:00 PM, with a complimentary 15-minute grace period for pickup. After 6:00 PM, a $1.00 per minute late fee will be applied.</div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question">
+          <span>Is there a specific curriculum your program uses?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Legacyland Academy uses the Georgia Early Learning and Development Standards (GELDS) for children ages birth through five years. Our curriculum is designed to promote school readiness while nurturing creativity, confidence, and a love for learning.</div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question">
+          <span>Do I receive a credit if my child is absent?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">At Legacyland Academy, tuition is billed on enrollment and not attendance. We encourage regular attendance.</div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question">
+          <span>When is tuition due?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Tuition is due on a weekly basis. It is based on enrollment and not attendance. Weekly tuition is due at the end of each week on Fridays at the time of check-in when your child is signed in for care.</div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question">
+          <span>Is there a sick policy?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Yes, we follow Bright From the Start's sick policy, which states that if a child has a fever of 101°F (38.3°C) or higher with other signs of illness, the child will not be allowed to be present at school. In order to return, the child must be fever-free for 24 hours without the use of medication, and showing no signs of illness. Also, if your child becomes sick during the day, they will be moved to a quiet, separated area and monitored until they are picked up. Children who become sick during the day must be picked up within 1 hour of the facility notifying the parent. If we cannot reach the parent(s), we will contact other authorized pick-up persons on the list.</div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question">
+          <span>What software platform do you use?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">We use the Playground software app for communication, daily updates, attendance, tuition payments, and more.</div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question">
+          <span>How much is tuition?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">We offer competitive rates, and we would love to have you contact us for more information.</div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question">
+          <span>What is required for enrollment?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Families complete enrollment forms, provide immunization records, complete emergency medication administration forms, authorized pick-up forms, and sign the operational policy and parent handbook.</div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question">
+          <span>What ages do you accept?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Enrollment is open to children ages 6 months through 5 years.</div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question">
+          <span>What forms of payment do you accept?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">We only accept online payments (credit or debit card) via the Playground app. No other forms of payment will be accepted. This ensures you receive the most accurate end-of-year report.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo"><img src="images/logo.png" alt="Legacy Land Academy"></div>
+    <ul class="footer-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="programs.html">Programs</a></li>
+      <li><a href="leadership.html">Leadership</a></li>
+      <li><a href="request-info.html">Enroll</a></li>
+    </ul>
+    <div class="footer-right">
+      Lawrenceville, Georgia<br>
+      <a href="tel:4043841575">(404) 384-1575</a> &nbsp;·&nbsp;
+      <a href="mailto:legacylandacademy@gmail.com">legacylandacademy@gmail.com</a><br>
+      &copy; 2025 Legacy Land Academy. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script>
+  (function () {
+    document.querySelectorAll('.faq-item').forEach(item => {
+      const question = item.querySelector('.faq-question');
+      const answer = item.querySelector('.faq-answer');
+      const inner = item.querySelector('.faq-answer-inner');
+
+      question.addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
+        if (isOpen) {
+          item.classList.remove('open');
+          answer.style.maxHeight = '0';
+        } else {
+          item.classList.add('open');
+          answer.style.maxHeight = inner.offsetHeight + 'px';
+        }
+      });
+    });
+  })();
+</script>
+</body>
+</html>

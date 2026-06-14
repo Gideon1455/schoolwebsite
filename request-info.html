@@ -99,11 +99,13 @@
   <div class="form-wrap reveal">
     <div class="section-header" style="margin-bottom:36px;">
       <span class="eyebrow">Get in Touch</span>
-      <h2 class="section-title" style="font-size:1.8rem;">Schedule a Tour</h2>
-      <p class="section-sub" style="font-size:0.9rem;">Fill out the form below and Ms. O will reach out to schedule your personal visit.</p>
+      <h2 class="section-title" style="font-size:1.8rem;">Request Information</h2>
+      <p class="section-sub" style="font-size:0.9rem;">Fill out the form below and Ms. O will reach out with more information.</p>
     </div>
 
-    <form>
+    <p id="form-status" style="display:none; text-align:center; font-weight:700; margin-bottom:20px; padding:14px; border-radius:8px;"></p>
+
+    <form id="request-info-form">
       <div class="form-row">
         <div class="form-group">
           <label for="firstName">First Name</label>
@@ -122,7 +124,7 @@
 
       <div class="form-group">
         <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" placeholder="(470) 000-0000">
+        <input type="tel" id="phone" name="phone" placeholder="(404) 384-1575">
       </div>
 
       <div class="form-row">
@@ -168,15 +170,65 @@
       <li><a href="request-info.html">Enroll</a></li>
     </ul>
     <div class="footer-right">
-      1455 Union Station Court, Lawrenceville GA 30045<br>
-      <a href="tel:4700000000">(470) 000-0000</a> &nbsp;·&nbsp;
-      <a href="mailto:info@legacylandacademy.com">info@legacylandacademy.com</a><br>
+      Lawrenceville, Georgia<br>
+      <a href="tel:4043841575">(404) 384-1575</a> &nbsp;·&nbsp;
+      <a href="mailto:legacylandacademy@gmail.com">legacylandacademy@gmail.com</a><br>
       &copy; 2025 Legacy Land Academy. All rights reserved.
     </div>
   </div>
 </footer>
 
-);
 <script src="main.js"></script>
+<script>
+  // Submit form data to Google Sheet via Apps Script Web App
+  (function () {
+    const form = document.getElementById('request-info-form');
+    const status = document.getElementById('form-status');
+    // Replace with your deployed Apps Script Web App URL
+    const ENDPOINT_URL = 'https://script.google.com/macros/s/AKfycbyzrqHGQYv2YjrRle-g76sjgWU9vq6vvcxfvyvgkLiBWS55Bgino1eYp_FX9jpgqoyM/exec';
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const data = {
+        firstName: form.firstName.value,
+        lastName: form.lastName.value,
+        email: form.email.value,
+        phone: form.phone.value,
+        childAge: form.childAge.value,
+        startDate: form.startDate.value,
+        message: form.message.value,
+      };
+
+      const submitBtn = form.querySelector('.form-submit');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+
+      fetch(ENDPOINT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      })
+        .then(() => {
+          status.style.display = 'block';
+          status.style.background = 'var(--green-pale)';
+          status.style.color = 'var(--green)';
+          status.textContent = 'Thank you! Your request has been received — we\'ll be in touch soon.';
+          form.reset();
+        })
+        .catch(() => {
+          status.style.display = 'block';
+          status.style.background = '#FBEAEA';
+          status.style.color = '#B23B3B';
+          status.textContent = 'Something went wrong. Please try again or call us directly.';
+        })
+        .finally(() => {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send My Request';
+        });
+    });
+  })();
+</script>
 </body>
 </html>
