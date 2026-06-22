@@ -17,15 +17,11 @@
         { label: 'Programs', href: 'programs.html' },
         { label: 'Curriculum', href: 'curriculum.html' },
         { label: 'Gallery', href: 'gallery.html' },
-        { label: 'Policies', href: 'policies.html' },
       ]
     },
     {
       label: 'Enrollment',
-      children: [
-        { label: 'Request Info', href: 'request-info.html' },
-        { label: 'Enrollment', href: 'enrollment.html' },
-      ]
+      href: 'request-info.html'
     },
     {
       label: 'Contact Us',
