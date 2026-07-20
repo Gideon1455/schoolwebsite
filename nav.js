@@ -25,7 +25,10 @@
     },
     {
       label: 'Contact Us',
-      href: 'contact.html'
+      children: [
+        { label: 'Contact Us', href: 'contact.html' },
+        { label: 'Share Your Experience', href: 'testimonial.html' },
+      ]
     }
   ];
 
@@ -123,11 +126,12 @@
   }
 
   function closeAll() {
-    allParents.forEach(p => closeDropdown(p, 0));
+    allParents.forEach(p => { if (p.closest('.has-dropdown')) closeDropdown(p, 0); });
   }
 
   allParents.forEach(parent => {
     const li = parent.closest('.has-dropdown');
+    if (!li) return;
 
     li.addEventListener('mouseenter', () => openDropdown(parent));
     li.addEventListener('mouseleave', () => closeDropdown(parent));

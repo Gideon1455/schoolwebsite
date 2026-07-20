@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Share your experience at Legacy Land Academy. We'd love to hear from your family.">
+<title>Share Your Experience – Legacy Land Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="images/logo.png" type="image/png">
+<style>
+  .page-hero { background: var(--green); padding: 80px 6% 60px; text-align: center; color: #fff; }
+  .page-hero-eyebrow { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; opacity: 0.65; display: block; margin-bottom: 14px; }
+  .page-hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 4vw, 3.2rem); line-height: 1.15; }
+  .page-hero-title em { font-style: italic; opacity: 0.85; }
+
+  .testimonial-form-section { padding: 88px 6%; background: var(--cream); }
+
+  .testimonial-form-wrap {
+    max-width: 640px; margin: 0 auto;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--tan);
+    box-shadow: var(--shadow-card);
+    padding: 48px 44px;
+  }
+
+  .form-group { margin-bottom: 22px; }
+
+  label {
+    display: block;
+    font-size: 0.78rem; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--charcoal-mid); margin-bottom: 8px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid var(--tan);
+    border-radius: 8px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.95rem; font-weight: 600;
+    color: var(--charcoal);
+    background: var(--cream);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+    box-sizing: border-box;
+  }
+
+  input:focus, textarea:focus, select:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(30,46,74,0.08);
+    background: var(--white);
+  }
+
+  textarea { resize: vertical; min-height: 150px; }
+
+  .star-select { display: flex; gap: 10px; margin-top: 4px; }
+
+  .star-select input[type="radio"] { display: none; }
+
+  .star-select label {
+    font-size: 1.6rem; cursor: pointer; color: var(--tan);
+    text-transform: none; letter-spacing: 0; font-weight: 400;
+    margin-bottom: 0; padding: 0;
+    transition: color 0.15s;
+  }
+
+  .star-select input[type="radio"]:checked ~ label,
+  .star-select label:hover,
+  .star-select label:hover ~ label { color: var(--gold); }
+
+  .star-select { flex-direction: row-reverse; justify-content: flex-end; }
+  .star-select label:hover,
+  .star-select label:hover ~ label { color: var(--gold); }
+
+  .form-submit {
+    width: 100%;
+    padding: 14px;
+    background: var(--green);
+    color: #fff;
+    border: none; border-radius: 8px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.95rem; font-weight: 800;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    margin-top: 4px;
+  }
+  .form-submit:hover { background: var(--green-mid); transform: translateY(-2px); }
+
+  .form-note { text-align: center; font-size: 0.78rem; color: var(--charcoal-light); font-weight: 600; margin-top: 14px; }
+
+  @media (max-width: 600px) {
+    .testimonial-form-wrap { padding: 32px 24px; }
+  }
+</style>
+</head>
+<body class="page-body">
+<script src="nav.js"></script>
+
+<div class="page-hero">
+  <span class="page-hero-eyebrow">We'd love to hear from you</span>
+  <h1 class="page-hero-title">Share Your <em>Experience</em></h1>
+</div>
+
+<section class="testimonial-form-section">
+  <div class="testimonial-form-wrap reveal">
+    <div class="section-header" style="margin-bottom:32px; text-align:left;">
+      <span class="eyebrow">Leave a Review</span>
+      <h2 class="section-title" style="font-size:1.8rem;">Tell Us About Your Child's Journey</h2>
+      <p class="section-sub" style="font-size:0.9rem; margin:0;">Your feedback means the world to us and helps other families find the right fit for their child.</p>
+    </div>
+
+    <form action="https://formspree.io/f/xzdlbybn" method="POST">
+      <input type="hidden" name="_subject" value="New Testimonial Submission – Legacy Land Academy">
+
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="Jane Smith" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="jane@example.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="role">Your Role</label>
+        <input type="text" id="role" name="role" placeholder="e.g. Parent of a Pre-K student">
+      </div>
+
+      <div class="form-group">
+        <label>Star Rating</label>
+        <div class="star-select">
+          <input type="radio" id="s5" name="rating" value="5 stars"><label for="s5">★</label>
+          <input type="radio" id="s4" name="rating" value="4 stars"><label for="s4">★</label>
+          <input type="radio" id="s3" name="rating" value="3 stars"><label for="s3">★</label>
+          <input type="radio" id="s2" name="rating" value="2 stars"><label for="s2">★</label>
+          <input type="radio" id="s1" name="rating" value="1 star"><label for="s1">★</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="review">Your Review</label>
+        <textarea id="review" name="review" placeholder="Share your experience at Legacy Land Academy..." required></textarea>
+      </div>
+
+      <button type="submit" class="form-submit">Submit Review</button>
+      <p class="form-note">Submissions are reviewed before being added to our website.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo"><img src="images/logo.png" alt="Legacy Land Academy"></div>
+    <ul class="footer-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="programs.html">Programs</a></li>
+      <li><a href="leadership.html">Leadership</a></li>
+      <li><a href="request-info.html">Enroll</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="footer-right">
+      Lawrenceville, Georgia<br>
+      <a href="tel:4043841575">(404) 384-1575</a> &nbsp;·&nbsp;
+      <a href="mailto:legacylandacademy@gmail.com">legacylandacademy@gmail.com</a><br>
+      &copy; 2026 Legacy Land Academy. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
